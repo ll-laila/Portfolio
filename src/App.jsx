@@ -15,7 +15,7 @@ const App = () => {
         {activeSection === "resume" ? (
           <Feedbacks />
         ) : (
-          <>
+          <> <Works />
             <About />
             <Experience />
             <Works />
