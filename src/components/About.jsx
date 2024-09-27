@@ -104,7 +104,7 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-      I am a dedicated software engineering student with a strong foundation in programming,
+      I am a dedicated software engineering student at the national school of applied sciences, with a strong foundation in programming,
        cloud technologies, and artificial intelligence. Proficient in languages such as Java,
         Python, and JavaScript, I have hands-on experience with frameworks like Spring Boot,
          React.js, Angular, Django, and the MERN stack. Passionate about utilizing AI to develop
