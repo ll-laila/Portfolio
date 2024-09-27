@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -8,6 +8,18 @@ import { SectionWrapper } from "../hoc";
 import { projects1, projects2, projects3 } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return isMobile;
+};
+
 const ProjectCard = ({
   index,
   name,
@@ -15,11 +27,13 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  isMobile,
 }) => {
-  const isMobile = window.innerWidth <= 768;
-
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+      className={isMobile ? "w-full" : ""}
+    >
       <Tilt
         options={{
           max: isMobile ? 0 : 45, // Désactiver le tilt sur mobile
@@ -66,6 +80,8 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const isMobile = useIsMobile();
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -88,17 +104,35 @@ const Works = () => {
 
       <div className="mt-20 flex flex-wrap gap-7">
         {projects1.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <div key={`project-${index}`} className={isMobile ? "w-full" : ""}>
+            <ProjectCard
+              index={index}
+              isMobile={isMobile}
+              {...project}
+            />
+          </div>
         ))}
       </div>
       <div className="mt-20 flex flex-wrap gap-7">
         {projects2.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <div key={`project-${index}`} className={isMobile ? "w-full" : ""}>
+            <ProjectCard
+              index={index}
+              isMobile={isMobile}
+              {...project}
+            />
+          </div>
         ))}
       </div>
       <div className="mt-20 flex flex-wrap gap-7">
-        {projects3.map((projectS, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...projectS} />
+        {projects3.map((project, index) => (
+          <div key={`project-${index}`} className={isMobile ? "w-full" : ""}>
+            <ProjectCard
+              index={index}
+              isMobile={isMobile}
+              {...project}
+            />
+          </div>
         ))}
       </div>
     </>
