@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
+
 import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects1, projects2, projects3 } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-// Hook pour détecter si l'écran est mobile
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -20,7 +20,6 @@ const useIsMobile = () => {
   return isMobile;
 };
 
-// Composant pour chaque projet
 const ProjectCard = ({
   index,
   name,
@@ -80,14 +79,13 @@ const ProjectCard = ({
   );
 };
 
-// Composant principal Works
 const Works = () => {
   const isMobile = useIsMobile();
 
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>My work</p>
+        <p className={`${styles.sectionSubText} `}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
       </motion.div>
 
@@ -96,7 +94,7 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          Following projects showcase my skills and experience through real-world
+          Following projects showcases my skills and experience through real-world
           examples of my work. Each project is briefly described with links to code
           repositories and live demos. It reflects my ability to solve complex
           problems, work with different technologies, and manage projects
@@ -104,8 +102,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      {/* Section des projets */}
-      <div className={`mt-20 flex ${isMobile ? "flex-col" : "flex-wrap"} gap-7`}>
+      <div className="mt-20 flex flex-wrap gap-7">
         {projects1.map((project, index) => (
           <div key={`project-${index}`} className={isMobile ? "w-full" : ""}>
             <ProjectCard
@@ -116,8 +113,7 @@ const Works = () => {
           </div>
         ))}
       </div>
-
-      <div className={`mt-20 flex ${isMobile ? "flex-col" : "flex-wrap"} gap-7`}>
+      <div className="mt-20 flex flex-wrap gap-7">
         {projects2.map((project, index) => (
           <div key={`project-${index}`} className={isMobile ? "w-full" : ""}>
             <ProjectCard
@@ -128,8 +124,7 @@ const Works = () => {
           </div>
         ))}
       </div>
-
-      <div className={`mt-20 flex ${isMobile ? "flex-col" : "flex-wrap"} gap-7`}>
+      <div className="mt-20 flex flex-wrap gap-7">
         {projects3.map((project, index) => (
           <div key={`project-${index}`} className={isMobile ? "w-full" : ""}>
             <ProjectCard
