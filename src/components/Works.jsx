@@ -8,6 +8,7 @@ import { SectionWrapper } from "../hoc";
 import { projects1, projects2, projects3 } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
+// Custom hook to check if the screen is mobile-sized
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -32,15 +33,15 @@ const ProjectCard = ({
   return (
     <motion.div
       variants={fadeIn("up", "spring", index * 0.5, 0.75)}
-      className={isMobile ? "w-full" : ""}
+      className={isMobile ? "w-full" : "sm:w-[360px]"}
     >
       <Tilt
         options={{
-          max: isMobile ? 0 : 45, // Désactiver le tilt sur mobile
+          max: isMobile ? 0 : 45, // Disable tilt on mobile
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl w-full sm:w-[360px]"
+        className="bg-tertiary p-5 rounded-2xl w-full"
       >
         <div className="relative w-full h-[230px]">
           <img
@@ -102,6 +103,7 @@ const Works = () => {
         </motion.p>
       </div>
 
+      {/* Display projects in multiple sections */}
       <div className="mt-20 flex flex-wrap gap-7">
         {projects1.map((project, index) => (
           <div key={`project-${index}`} className={isMobile ? "w-full" : ""}>
@@ -113,6 +115,7 @@ const Works = () => {
           </div>
         ))}
       </div>
+
       <div className="mt-20 flex flex-wrap gap-7">
         {projects2.map((project, index) => (
           <div key={`project-${index}`} className={isMobile ? "w-full" : ""}>
@@ -124,6 +127,7 @@ const Works = () => {
           </div>
         ))}
       </div>
+
       <div className="mt-20 flex flex-wrap gap-7">
         {projects3.map((project, index) => (
           <div key={`project-${index}`} className={isMobile ? "w-full" : ""}>
