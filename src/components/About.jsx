@@ -81,7 +81,7 @@ const ServiceCard = ({ index}) => (
         />
 
         <h3 className='text-white text-[20px] font-bold text-center'>
-          IA \ ML \ DL 
+          IA 
         </h3>
       </div>
     </motion.div>

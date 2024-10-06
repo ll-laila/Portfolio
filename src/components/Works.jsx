@@ -117,29 +117,6 @@ const Works = () => {
         ))}
       </div>
 
-      <div className={`mt-20 flex ${isMobile ? "flex-col" : "flex-wrap"} gap-7`}>
-        {projects2.map((project, index) => (
-          <div key={`project-${index}`} className={isMobile ? "w-full" : ""}>
-            <ProjectCard
-              index={index}
-              isMobile={isMobile}
-              {...project}
-            />
-          </div>
-        ))}
-      </div>
-
-      <div className={`mt-20 flex ${isMobile ? "flex-col" : "flex-wrap"} gap-7`}>
-        {projects3.map((project, index) => (
-          <div key={`project-${index}`} className={isMobile ? "w-full" : ""}>
-            <ProjectCard
-              index={index}
-              isMobile={isMobile}
-              {...project}
-            />
-          </div>
-        ))}
-      </div>
     </>
   );
 };
