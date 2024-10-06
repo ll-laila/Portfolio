@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Works, StarsCanvas } from "./components";
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Works,Works2 ,Works3 , StarsCanvas } from "./components";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("");
@@ -19,6 +19,8 @@ const App = () => {
             <About />
             <Experience />
             <Works />
+            <Works2 />
+            <Works3 />
           </>
         )}
         <div className='relative z-0'>
