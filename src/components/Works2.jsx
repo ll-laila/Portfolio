@@ -88,7 +88,7 @@ const Works2 = () => {
     <>
 
       {/* Section des projets */}
-      <div className={`mt-10 flex ${isMobile ? "flex-col" : "flex-wrap"} gap-7`}>
+      <div className={`mt-5 flex ${isMobile ? "flex-col" : "flex-wrap"} gap-7`}>
         {projects2.map((project, index) => (
           <div key={`project-${index}`} className={isMobile ? "w-full" : ""}>
             <ProjectCard
