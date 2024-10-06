@@ -69,7 +69,7 @@ const experiences = [
     company_name: "Monarkit.net",
     icon: monarkit,
     iconBg: "#FFFFFF",
-    date: "July 2023 - august 2023",
+    date: "July 2023 - september 2023",
     points: [
       " During my internship at Monarkit.net, I worked on two main tasks :",
       " Task 1 :  Data Extraction with Web Scraping: I used Python to scrape data from PDF files and websites, extracting content to build a question-and-answer application. This automated data extraction process was essential for efficiently gathering relevant information and structuring it for the application.",
